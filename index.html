@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio Muhammad Saifulloh Sidqi">
+<title>Saifulloh Sidqi | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #070d18;
+    --card: #101d30;
+    --blue: #078cf0;
+    --cyan: #38d9ff;
+    --white: #f5f8ff;
+    --muted: #a5b4c8;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,13,24,.96);
+    border-bottom: 1px solid #20334b;
+    padding: 17px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--cyan);
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+.nav-links a {
+    color: #c5d1e0;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.hero {
+    min-height: 90vh;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    background:
+      radial-gradient(circle at 80% 40%,
+      #123b65 0%, transparent 50%);
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid var(--cyan);
+    padding: 7px 15px;
+    border-radius: 30px;
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.photo {
+    width: 285px;
+    height: 360px;
+    padding: 6px;
+    border-radius: 22px;
+    background: linear-gradient(135deg,
+        var(--cyan), #0874df, #172c49);
+    box-shadow: 0 0 40px #008cff44;
+    flex-shrink: 0;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 17px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 5px 3px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--cyan);
+    color: #07101e;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+}
+
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 65px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 35px;
+}
+
+.heading span {
+    color: var(--cyan);
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #203650;
+    padding: 25px;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: var(--cyan);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.bio p {
+    padding: 12px 0;
+    border-bottom: 1px solid #273b53;
+    font-size: 14px;
+}
+
+.bio b {
+    display: inline-block;
+    width: 125px;
+    color: var(--cyan);
+}
+
+.skill {
+    background: #142943;
+    padding: 17px;
+    border-radius: 9px;
+    border-left: 4px solid var(--cyan);
+    color: #e5f4ff;
+    font-size: 14px;
+}
+
+.project {
+    min-height: 155px;
+}
+
+.contact {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px 0;
+}
+
+.contact a:not(.btn) {
+    color: var(--cyan);
+    word-break: break-word;
+}
+
+footer {
+    text-align: center;
+    padding: 28px;
+    background: #0c1728;
+    border-top: 1px solid #203650;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--cyan);
+}
+
+@media(max-width: 750px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+        padding: 50px 6%;
+    }
+
+    .photo {
+        width: 230px;
+        height: 290px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .heading {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<nav>
+    <div class="logo">SAIFULLOH.</div>
+
+    <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#about">PROFIL</a>
+        <a href="#biodata">BIODATA</a>
+        <a href="#education">PENDIDIKAN</a>
+        <a href="#experience">ORGANISASI</a>
+        <a href="#skills">KEAHLIAN</a>
+        <a href="#contact">KONTAK</a>
+    </div>
+</nav>
+
+<!-- BERANDA -->
+<header class="hero" id="home">
+
+    <div class="hero-content">
+        <div class="tag">WELCOME TO MY PORTFOLIO</div>
+
+        <h1>
+            HELLO, I'M
+            <span>SAIFULLOH SIDQI</span>
+        </h1>
+
+        <p>
+            Mahasiswa Rekayasa Elektro yang memiliki
+            ketertarikan terhadap dunia teknologi,
+            elektronika, inovasi, dan pengembangan
+            perangkat elektronik.
+        </p>
+
+        <a href="#about" class="btn">TENTANG SAYA</a>
+        <a href="#contact" class="btn btn-outline">KONTAK SAYA</a>
+    </div>
+
+    <div class="photo">
+        <img src="foto.png"
+        alt="Muhammad Saifulloh Sidqi">
+    </div>
+
+</header>
+
+<!-- PROFIL -->
+<section id="about">
+    <h2 class="heading">TENTANG <span>SAYA</span></h2>
+
+    <div class="card">
+        <h3>Muhammad Saifulloh Sidqi</h3>
+
+        <p>
+            Perkenalkan, saya Muhammad Saifulloh Sidqi,
+            mahasiswa Program Studi Rekayasa Elektro
+            di Universitas Muhammadiyah Semarang.
+
+            Saya berasal dari Demak, Jawa Tengah.
+            Saya memiliki ketertarikan dalam bidang
+            teknologi, khususnya elektronika,
+            perakitan power amplifier, dan perbaikan
+            perangkat elektronik.
+
+            Saya senantiasa berusaha mengembangkan
+            keterampilan, kreativitas, kedisiplinan,
+            dan kemampuan untuk menciptakan inovasi
+            yang bermanfaat bagi masyarakat.
+        </p>
+    </div>
+</section>
+
+<!-- BIODATA -->
+<section id="biodata">
+    <h2 class="heading">BIODATA <span>PRIBADI</span></h2>
+
+    <div class="card bio">
+        <p><b>Nama</b> Muhammad Saifulloh Sidqi</p>
+        <p><b>NIM</b> 13042620071</p>
+        <p><b>Asal</b> Demak, Jawa Tengah</p>
+        <p><b>Kampus</b> Universitas Muhammadiyah Semarang</p>
+        <p><b>Fakultas</b> Teknik</p>
+        <p><b>Program Studi</b> Rekayasa Elektro</p>
+        <p><b>Instagram</b> @mssdqii_</p>
+        <p><b>Email</b> saifulsopan97@gmail.com</p>
+    </div>
+</section>
+
+<!-- PENDIDIKAN -->
+<section id="education">
+    <h2 class="heading">RIWAYAT <span>PENDIDIKAN</span></h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>MA Sholihiyyah</h3>
+            <p>
+                Kalitengah, Mranggen, Demak.
+                Pendidikan menengah atas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Universitas Muhammadiyah Semarang</h3>
+            <p>
+                Fakultas Teknik.
+                Program Studi Rekayasa Elektro.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ORGANISASI -->
+<section id="experience">
+    <h2 class="heading">PENGALAMAN <span>ORGANISASI</span></h2>
+
+    <div class="card">
+        <h3>Ketua OSIM MA Sholihiyyah</h3>
+        <p>
+            Periode 2025/2026.
+
+            Memiliki pengalaman dalam kepemimpinan,
+            koordinasi organisasi, komunikasi,
+            kerja sama tim, dan kegiatan kesiswaan.
+        </p>
+    </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section id="skills">
+    <h2 class="heading">KEAHLIAN & <span>MINAT</span></h2>
+
+    <div class="grid">
+        <div class="skill">Elektronika</div>
+        <div class="skill">Perakitan Power Amplifier</div>
+        <div class="skill">Perbaikan Perangkat Elektronik</div>
+        <div class="skill">Teamwork</div>
+        <div class="skill">Pemrograman Dasar</div>
+        <div class="skill">Pengembangan Teknologi</div>
+    </div>
+</section>
+
+<!-- PROYEK -->
+<section id="projects">
+    <h2 class="heading">PROYEK <span>& MINAT</span></h2>
+
+    <div class="grid">
+        <div class="card project">
+            <h3>Power Amplifier</h3>
+            <p>
+                Ketertarikan pada perakitan,
+                pengembangan, dan sistem penguat audio.
+            </p>
+        </div>
+
+        <div class="card project">
+            <h3>Elektronika</h3>
+            <p>
+                Eksplorasi dan perbaikan
+                perangkat elektronik.
+            </p>
+        </div>
+
+        <div class="card project">
+            <h3>Pemrograman</h3>
+            <p>
+                Belajar mengembangkan aplikasi,
+                program, dan website.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section id="contact">
+    <h2 class="heading">HUBUNGI <span>SAYA</span></h2>
+
+    <div class="card contact">
+        <h3>LET'S CONNECT!</h3>
+
+        <p>
+            Terima kasih telah mengunjungi
+            website profil pribadi saya.
+            Mari terhubung dan berbagi pengalaman.
+        </p>
+
+        <p>
+            Instagram:
+            <a href="https://instagram.com/mssdqii_"
+               target="_blank">
+               @mssdqii_
+            </a>
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:saifulsopan97@gmail.com">
+               saifulsopan97@gmail.com
+            </a>
+        </p>
+
+        <a class="btn"
+           href="https://instagram.com/mssdqii_"
+           target="_blank">
+           INSTAGRAM
+        </a>
+
+        <a class="btn btn-outline"
+           href="mailto:saifulsopan97@gmail.com">
+           KIRIM EMAIL
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 <span>Muhammad Saifulloh Sidqi</span></p>
+    <p>PERSONAL PORTFOLIO | BUILT WITH HTML & CSS</p>
+</footer>
+
+</body>
+</html>
